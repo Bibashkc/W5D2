@@ -1,0 +1,39 @@
+<h2><a href="<%= sub_url(@sub) %> "><%= @sub.title %></a></h2>
+<ul>
+<% @sub.posts.each do |post| %>
+    <li>Title: <%= post.title %> URL: <a href="<%= post.url %>"> Money </a> Content: <%= post.content %></li>
+
+<form action="<%=post_url(post)%>" method = "POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete!" >
+</form>
+<% end %>
+</ul>
+
+<h3>ADD POST</h3>
+
+<form action="<%=sub_posts_url(@sub)%>" method = "POST">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+<label for="title">Title
+    <input type="text" id="title" name="post[title]">
+</label>
+
+<label for="url">URL
+    <input type="text" id="url" name="post[url]">
+</label>
+
+<label for="content">Content
+    <input type="text" id="content" name="post[content]">
+</label>
+<input type="submit" value="Post!" >
+</form>
+
+
+
+
+<ul>
+<li><a href="<%= edit_sub_url(@sub) %>">Edit Your Topic</a></li>
+<li><a href="<%= subs_url %> ">Topics</a></li>
+</ul>

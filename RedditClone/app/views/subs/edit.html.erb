@@ -1,0 +1,17 @@
+<h2>Edit Topic</h2>
+
+<form action="<%=edit_sub_url(@sub)%>" method = "POST">
+    <input type="hidden" name="_method" value="patch">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+<label for="title">Title
+    <input type="text" id="title" name="sub[title]">
+</label>
+
+<label for="description">Description
+    <input type="text" id="description" name="sub[description]">
+</label>
+
+<input type="submit" value="Update!">
+
+</form>

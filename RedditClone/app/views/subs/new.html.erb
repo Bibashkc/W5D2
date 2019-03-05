@@ -1,0 +1,15 @@
+<h1>Create a Topic</h1>
+<form action="<%=subs_url%>" method = "POST">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+<label for="title">Title
+    <input type="text" id="title" name="sub[title]">
+</label>
+
+<label for="description">Description
+    <input type="text" id="description" name="sub[description]">
+</label>
+
+<input type="submit" value="Create!" >
+
+</form>
